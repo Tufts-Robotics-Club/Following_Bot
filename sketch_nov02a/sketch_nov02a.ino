@@ -15,7 +15,7 @@ int motorL = ; //direction pin for left motor
 int motorLspeed = ; //speed pin for left motor
 int motorRspeed = ; //speed pin for right motor
 int motorR = ; //direction pin for right motor
-int motorTime = ; time in millisecond that it takes to make a turn 
+int motorTime = 1000; time in millisecond that it takes to make a turn 
 int driveSpeed =255 ; //speed that the motors turn at 
 
 //ultrasonic global variables
