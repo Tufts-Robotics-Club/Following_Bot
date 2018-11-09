@@ -19,7 +19,7 @@ int motorTime = 1000; time in millisecond that it takes to make a turn
 int driveSpeed =255 ; //speed that the motors turn at 
 
 //ultrasonic global variables
-int USFOn = ;    // Trigger for fron Ultrasonic Sensor
+int USFOn = 11;    // Trigger for fron Ultrasonic Sensor
 int USFEcho = ;    // Echo for front Ultrasonic Sensor
 int USROn = ; // Trigger for fron Ultrasonic Sensor
 int USREcho = ; //Echo for front Ultrasonic Sensor
