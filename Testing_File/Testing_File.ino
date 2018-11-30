@@ -6,7 +6,25 @@ int motorR = 3;
 int motorRspeed = 2;
 int delayTime = 3000;
 int mode = 7;
+int x =1;
 
+void drive() {
+  //turn right motor forward
+  digitalWrite(motorR, HIGH);
+  analogWrite(motorRspeed, driveSpeed);
+  //turn left motor forward
+  digitalWrite(motorL, HIGH);
+  analogWrite(motorLspeed, driveSpeed);
+
+}
+void stopRobot(){
+  //Stop the right motor 
+  digitalWrite(motorR, HIGH);
+  analogWrite(motorRspeed, 0);
+  //stop the left motor
+  digitalWrite(motorL, HIGH);
+  analogWrite(motorLspeed, 0);
+}
 void setup() {
   
   pinMode (motorLspeed, OUTPUT);
@@ -14,67 +32,14 @@ void setup() {
   pinMode (motorRspeed, OUTPUT);
   pinMode (motorR, OUTPUT);
   pinMode(mode, OUTPUT);
-
-}
-void stopRobot() {
-  
-  digitalWrite(motorR, HIGH);
-  analogWrite(motorRspeed, 0);
-  digitalWrite(motorL, HIGH);
-  analogWrite(motorLspeed, 0);
-  
-}
-void drive() {
-  
-  digitalWrite(motorR, HIGH);
-  analogWrite(motorRspeed, driveSpeed);
-  digitalWrite(motorL, HIGH);
-  analogWrite(motorLspeed, driveSpeed);
-  delay(delayTime);
-  stopRobot();
-
-}
-
-void turnLeft() {
-
-  digitalWrite(motorR, HIGH);
-  analogWrite(motorRspeed, driveSpeed);
-  digitalWrite(motorL, LOW);
-  analogWrite(motorLspeed, driveSpeed);
-  delay(delayTime);
-  stopRobot();
-  
-}
-
-void turnRight () {
-  
-  digitalWrite(motorR, LOW);
-  analogWrite(motorRspeed, driveSpeed);
-  digitalWrite(motorL, HIGH);
-  analogWrite(motorLspeed, driveSpeed);
-  delay(delayTime);
-  stopRobot();
-  
+  digitalWrite(mode, HIGH);
 }
 void loop() {
-  
-  /*if(getUSF() == threshold) {
-    if(getUSF() == threshold) {
-      turnLeft();
-    }
-    else {
-      turnRight();
-    }
-  }
-  else if(getUSR != threshold) {
-    turnRight();
-  }
-  else {
+  if(x == 1){
     drive();
+    delay(delayTime);
+    x++;
   }
-*/
-digitalWrite(mode, HIGH);
-turnLeft();
-turnRight();
-
+  stopRobot();
+  
 }
