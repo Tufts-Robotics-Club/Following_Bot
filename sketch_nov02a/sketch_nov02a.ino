@@ -9,7 +9,6 @@
         Echo: Echo (OUTPUT) - Pin 12
         GND: GND
  */
-//test
 // sets pins of analog and digital output for the motors
 int motorL = ; //direction pin for left motor
 int motorLspeed = ; //speed pin for left motor
@@ -138,3 +137,4 @@ void loop() {
     drive();
   }
 delay(10000) // give the robot a break
+}
